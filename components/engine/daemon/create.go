@@ -236,13 +236,13 @@ func toHostConfigSelinuxLabels(labels []string) []string {
 }
 
 func (daemon *Daemon) generateSecurityOpt(hostConfig *containertypes.HostConfig) ([]string, error) {
-	for _, opt := range hostConfig.SecurityOpt {
-		con := strings.Split(opt, "=")
-		if con[0] == "label" {
-			// Caller overrode SecurityOpts
-			return nil, nil
-		}
-	}
+	//for _, opt := range hostConfig.SecurityOpt {
+	//	con := strings.Split(opt, "=")
+	//	if con[0] == "label" {
+	//		// Caller overrode SecurityOpts
+	//		return nil, nil
+	//	}
+	//}
 	ipcMode := hostConfig.IpcMode
 	pidMode := hostConfig.PidMode
 	privileged := hostConfig.Privileged
